@@ -1,4 +1,4 @@
-const Navbar = () => {
+const Header = () => {
     return (<>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
@@ -71,4 +71,4 @@ const Navbar = () => {
         </nav>
     </>)
 }
-export default Navbar;
+export default Header;

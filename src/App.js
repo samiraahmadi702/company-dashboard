@@ -1,12 +1,14 @@
 import './App.css';
 import {BrowserRouter} from "react-router-dom";
-import Navbar from "./components/Navbar";
+import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
+import MainContent from "./components/MainContent";
 
 function App() {
     return (
         <BrowserRouter>
-            <Navbar/>
-
+            <Header/>
+            <MainContent/>
         </BrowserRouter>
     );
 }
