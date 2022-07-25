@@ -1,16 +1,21 @@
 import './App.css';
-import {BrowserRouter} from "react-router-dom";
-import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
+import {Routes, Route, Navigate} from "react-router-dom";
+import Header from "./components/layout/Header";
 import MainContent from "./components/MainContent";
+import Contact from "./components/contacts/Contact";
 
 function App() {
     return (
-        <BrowserRouter>
+        <>
             <Header/>
-            <MainContent/>
-        </BrowserRouter>
-    );
+            <Routes>
+                <Route path="/" element={<MainContent/>}>
+                    <Route path="contact" element={<Contact/>}/>
+                </Route>
+            </Routes>
+        </>
+    )
+        ;
 }
 
 export default App;

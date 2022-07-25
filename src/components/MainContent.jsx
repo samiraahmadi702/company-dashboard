@@ -1,4 +1,6 @@
-import Sidebar from "./Sidebar";
+import Sidebar from "./layout/Sidebar";
+import {Outlet} from 'react-router-dom'
+import {CURRENTLINE} from "../helpers/colors";
 
 const MainContent = () => {
     return (
@@ -8,12 +10,9 @@ const MainContent = () => {
                     <div className="col-2 px-0">
                         <Sidebar/>
                     </div>
-                    <div className="col-10">
-                        <div className="container">
-                            The Web Content in detail.
-                        </div>
-                        <div className="container">
-                            <p> The vertical menu can place the left or right side of the web pages.</p>
+                    <div className="col-10" style={{backgroundColor: CURRENTLINE}}>
+                        <div className="mx-5">
+                            <Outlet/>
                         </div>
                     </div>
                 </div>

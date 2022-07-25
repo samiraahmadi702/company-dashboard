@@ -1,8 +1,11 @@
 import './Sidebar.css';
+import {COMMENT, CYAN} from '../../helpers/colors'
+import {Link} from "react-router-dom";
 
 const Sidebar = () => {
     return (
-        <nav className="bg-dark h-100 text-white justify-content-center align-items-center">
+        <nav className="bg-dark h-100 text-white justify-content-center align-items-center"
+        >
             <div className="container-fluid">
                 <ul className="navbar-nav px-4">
                     <li className="nav-item mt-3">
@@ -16,14 +19,16 @@ const Sidebar = () => {
                         </a>
                         <ul className="collapse flex-column " id="menu1">
                             <li>
-                                <a href="#" className="nav-link">
+                                <Link to={"/contact"} className="nav-link">
                                     <i className="fas fa-id-card" style={{marginRight: "3px"}}></i>
-                                    All Contacts</a>
+                                    All Contacts
+                                </Link>
                             </li>
                             <li>
-                                <a href="#" className="nav-link">
+                                <Link to={"/"} className="nav-link">
                                     <i className="fas fa-file-signature" style={{marginRight: "3px"}}></i>
-                                    Add Contact</a>
+                                    Add Contact
+                                </Link>
                             </li>
                         </ul>
                     </li>
@@ -39,9 +44,10 @@ const Sidebar = () => {
                     </li>
                     <ul className="collapse flex-column" id="menu2">
                         <li>
-                            <a href="#" className="nav-link">
+                            <Link to={"/"} className="nav-link">
                                 <i className="fas fa-video-slash" style={{marginRight: "3px"}}></i>
-                                All Videos</a>
+                                All Videos
+                            </Link>
                         </li>
                     </ul>
                     <li className="nav-item">
@@ -56,19 +62,21 @@ const Sidebar = () => {
                     </li>
                     <ul className="collapse flex-column" id="menu3">
                         <li>
-                            <a href="#" className="nav-link">
+                            <Link to={"/"} className="nav-link">
                                 <i className="fas fa-rss" style={{marginRight: "3px"}}></i>
-                                Overview</a>
+                                Overview</Link>
                         </li>
                         <li>
-                            <a href="#" className="nav-link">
+                            <Link to={"/"} className="nav-link">
                                 <i className="fas fa-edit" style={{marginRight: "3px"}}></i>
-                                Posts</a>
+                                Posts
+                            </Link>
                         </li>
                         <li>
-                            <a href="#" className="nav-link">
+                            <Link to={"/"} className="nav-link">
                                 <i className="fas fa-address-card" style={{marginRight: "3px"}}></i>
-                                Writers</a>
+                                Writers
+                            </Link>
                         </li>
                     </ul>
                     <li className="nav-item">
@@ -83,14 +91,16 @@ const Sidebar = () => {
                     </li>
                     <ul className="collapse flex-column" id="menu4">
                         <li>
-                            <a href="#" className="nav-link">
+                            <Link to={"/"} className="nav-link">
                                 <i className="fas fa-mail-bulk" style={{marginRight: "3px"}}></i>
-                                Inbox</a>
+                                Inbox
+                            </Link>
                         </li>
                         <li>
-                            <a href="#" className="nav-link">
+                            <Link to={"/"} className="nav-link">
                                 <i className="fas fa-at" style={{marginRight: "3px"}}></i>
-                                Chat</a>
+                                Chat
+                            </Link>
                         </li>
                     </ul>
                 </ul>
