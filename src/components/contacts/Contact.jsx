@@ -59,15 +59,6 @@ const Contact = () => {
                                     >
                                         <i className="fa fa-trash"/>
                                     </Link>
-                                    {/*<li className="list-group-item">*/}
-                                    {/*    <i className="fas fa-eye"></i>*/}
-                                    {/*</li>*/}
-                                    {/*<li className="list-group-item ">*/}
-                                    {/*    <i className="fas fa-pen"></i>*/}
-                                    {/*</li>*/}
-                                    {/*<li className="list-group-item ">*/}
-                                    {/*    <i className="fas fa-trash"></i>*/}
-                                    {/*</li>*/}
                                 </ul>
                             </div>
                         </div>
