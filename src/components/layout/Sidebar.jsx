@@ -1,16 +1,28 @@
 import './Sidebar.css';
 import {COMMENT, CYAN} from '../../helpers/colors'
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 const Sidebar = () => {
+
+    let notActiveLinkStyle = {
+        textDecoration: "none",
+        color: "white"
+
+
+    }
+    let isActiveLinkStyle = {
+        textDecorationLine: "underline",
+        textDecorationStyle: "double",
+        color: "white"
+    };
+
     return (
-        <nav className="bg-dark h-100 text-white justify-content-center align-items-center"
-        >
+        <nav className="bg-dark h-100 text-white justify-content-center align-items-center">
             <div className="container-fluid">
                 <ul className="navbar-nav px-4">
                     <li className="nav-item mt-3">
                         <a href="#menu1"
-                           className="nav-link"
+                           className="nav-NavLink"
                            data-bs-toggle="collapse"
                         >
                             <i className="fas fa-address-book " style={{marginRight: "3px"}}></i>
@@ -19,21 +31,23 @@ const Sidebar = () => {
                         </a>
                         <ul className="collapse flex-column " id="menu1">
                             <li>
-                                <Link to={"/contact"} className="nav-link">
+                                <NavLink to={"/contact"}
+                                         style={({isActive}) => isActive ? isActiveLinkStyle : notActiveLinkStyle}>
                                     <i className="fas fa-id-card" style={{marginRight: "3px"}}></i>
                                     All Contacts
-                                </Link>
+                                </NavLink>
                             </li>
                             <li>
-                                <Link to={"/"} className="nav-link">
+                                <NavLink to={"/"} className="nav-NavLink"
+                                         style={({isActive}) => isActive ? isActiveLinkStyle : notActiveLinkStyle}>
                                     <i className="fas fa-file-signature" style={{marginRight: "3px"}}></i>
                                     Add Contact
-                                </Link>
+                                </NavLink>
                             </li>
                         </ul>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link"
+                        <a className="nav-NavLink"
                            href="#menu2"
                            data-bs-toggle="collapse"
                         >
@@ -44,14 +58,15 @@ const Sidebar = () => {
                     </li>
                     <ul className="collapse flex-column" id="menu2">
                         <li>
-                            <Link to={"/"} className="nav-link">
+                            <NavLink to={"/"} className="nav-NavLink"
+                                     style={({isActive}) => isActive ? isActiveLinkStyle : notActiveLinkStyle}>
                                 <i className="fas fa-video-slash" style={{marginRight: "3px"}}></i>
                                 All Videos
-                            </Link>
+                            </NavLink>
                         </li>
                     </ul>
                     <li className="nav-item">
-                        <a className="nav-link"
+                        <a className="nav-NavLink"
                            href="#menu3"
                            data-bs-toggle="collapse"
                         >
@@ -62,25 +77,28 @@ const Sidebar = () => {
                     </li>
                     <ul className="collapse flex-column" id="menu3">
                         <li>
-                            <Link to={"/"} className="nav-link">
+                            <NavLink to={"/"} className="nav-NavLink"
+                                     style={({isActive}) => isActive ? isActiveLinkStyle : notActiveLinkStyle}>
                                 <i className="fas fa-rss" style={{marginRight: "3px"}}></i>
-                                Overview</Link>
+                                Overview</NavLink>
                         </li>
                         <li>
-                            <Link to={"/"} className="nav-link">
+                            <NavLink to={"/"} className="nav-NavLink"
+                                     style={({isActive}) => isActive ? isActiveLinkStyle : notActiveLinkStyle}>
                                 <i className="fas fa-edit" style={{marginRight: "3px"}}></i>
                                 Posts
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to={"/"} className="nav-link">
+                            <NavLink to={"/"} className="nav-NavLink"
+                                     style={({isActive}) => isActive ? isActiveLinkStyle : notActiveLinkStyle}>
                                 <i className="fas fa-address-card" style={{marginRight: "3px"}}></i>
                                 Writers
-                            </Link>
+                            </NavLink>
                         </li>
                     </ul>
                     <li className="nav-item">
-                        <a className="nav-link"
+                        <a className="nav-NavLink"
                            href="#menu4"
                            data-bs-toggle="collapse"
                         >
@@ -91,16 +109,18 @@ const Sidebar = () => {
                     </li>
                     <ul className="collapse flex-column" id="menu4">
                         <li>
-                            <Link to={"/"} className="nav-link">
+                            <NavLink to={"/"} className="nav-NavLink"
+                                     style={({isActive}) => isActive ? isActiveLinkStyle : notActiveLinkStyle}>
                                 <i className="fas fa-mail-bulk" style={{marginRight: "3px"}}></i>
                                 Inbox
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to={"/"} className="nav-link">
+                            <NavLink to={"/"} className="nav-NavLink"
+                                     style={({isActive}) => isActive ? isActiveLinkStyle : notActiveLinkStyle}>
                                 <i className="fas fa-at" style={{marginRight: "3px"}}></i>
                                 Chat
-                            </Link>
+                            </NavLink>
                         </li>
                     </ul>
                 </ul>
