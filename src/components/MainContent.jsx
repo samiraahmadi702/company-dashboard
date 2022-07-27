@@ -20,8 +20,6 @@ const MainContent = () => {
 
                 setAllContacts(contactsData);
                 setAllGroups(groupData);
-                console.log(allContacts);
-                console.log(allGroups);
 
             } catch (err) {
                 console.log(err.message);
@@ -30,14 +28,20 @@ const MainContent = () => {
         fetchData()
     }, [])
 
-    return (<ContactContext.Provider value={{allContacts, setAllContacts}}>
+    return (<ContactContext.Provider
+        value={{
+            allContacts, setAllContacts,
+            allGroups, setAllGroups
+        }}>
+
         <div className="h-100 w-100 mx-0 px-0">
-            <div className="row h-100">
-                <div className="col-2 px-0">
+            <div className="row h-100 ">
+                <div className="col-2 px-0 position-sticky">
                     <Sidebar/>
                 </div>
-                <div className="col-10" style={{backgroundColor: CURRENTLINE}}>
-                    <div className="mx-5">
+                <div className="col-10 position-relative overflow-scroll h-100" style={{backgroundColor: CURRENTLINE}}>
+                    <div className="mx-2 mt-5 h-100 d-flex flex-grow-1 flex-wrap"
+                         style={{justifyContent: "flex-start", flexDirection: "row", alignContent: "flex-start"}}>
                         <Outlet/>
                     </div>
                 </div>

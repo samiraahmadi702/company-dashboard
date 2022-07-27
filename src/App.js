@@ -3,6 +3,7 @@ import {Routes, Route, Navigate} from "react-router-dom";
 import Header from "./components/layout/Header";
 import MainContent from "./components/MainContent";
 import Contact from "./components/contacts/Contact";
+import AllContacts from "./components/contacts/AllContacts";
 
 function App() {
     return (
@@ -10,7 +11,7 @@ function App() {
             <Header/>
             <Routes>
                 <Route path="/" element={<MainContent/>}>
-                    <Route path="contact" element={<Contact/>}/>
+                    <Route path="contact" element={<AllContacts/>}/>
                 </Route>
             </Routes>
         </>
