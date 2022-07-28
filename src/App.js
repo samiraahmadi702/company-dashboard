@@ -2,7 +2,6 @@ import './App.css';
 import {Routes, Route, Navigate} from "react-router-dom";
 import Header from "./components/layout/Header";
 import MainContent from "./components/MainContent";
-import Contact from "./components/contacts/Contact";
 import AllContacts from "./components/contacts/AllContacts";
 
 function App() {

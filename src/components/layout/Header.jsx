@@ -1,3 +1,5 @@
+import SearchContact from "../contacts/SearchContact";
+
 const Header = () => {
     return (<>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -32,8 +34,7 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="col-3">
-                        <input type="search" className="form-control rounded-pill"
-                               placeholder=" Search"/>
+                        {/*<SearchContact/>*/}
                     </div>
                     <div className="col-1 d-flex align-items-center">
                         <i className="fab fa-twitter mx-3"
@@ -48,10 +49,7 @@ const Header = () => {
                     <div className="col-2 d-flex align-items-center">
                         <div className="rounded-circle d-flex justify-content-center align-items-center mx-3"
                              style={{
-                                 backgroundColor: "red",
-                                 color: "white",
-                                 width: "30px",
-                                 height: "30px",
+                                 backgroundColor: "red", color: "white", width: "30px", height: "30px",
                              }}>
                             <span className="fw-bold">s</span>
                         </div>
