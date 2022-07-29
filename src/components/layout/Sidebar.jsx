@@ -38,7 +38,7 @@ const Sidebar = () => {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to={"/"} className="nav-NavLink"
+                                <NavLink to={"/contact/add"} className="nav-NavLink"
                                          style={({isActive}) => isActive ? isActiveLinkStyle : notActiveLinkStyle}>
                                     <i className="fas fa-file-signature" style={{marginRight: "3px"}}></i>
                                     Add Contact

@@ -11,5 +11,7 @@ export const ContactContext = createContext({
     setFilteredContacts: () => {
     },
     onSearchInputChange: () => {
+    },
+    onCreateContact: () => {
     }
 })

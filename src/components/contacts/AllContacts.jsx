@@ -8,8 +8,8 @@ const AllContacts = () => {
     return (
         <>
             {
-                filteredContacts.map(c => (
-                        <Contact contact={c} key={c.id}
+                filteredContacts.map((c) => (
+                        <Contact key={c.id} contact={c}
                                  style={{height: "100%"}}
                         >
                         </Contact>
