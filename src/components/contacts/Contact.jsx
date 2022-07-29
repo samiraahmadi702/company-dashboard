@@ -7,7 +7,7 @@ const Contact = ({contact, confirmDelete}) => {
 
     return (
         <>
-            <div className="card col-5 mx-5 mb-5" style={{height: "fit-content"}}>
+            <div className="card col-md-5  mx-5 mb-5" style={{height: "fit-content"}}>
                 <div className="card-body">
                     <div className="row">
                         <div className="col-4">
@@ -49,7 +49,7 @@ const Contact = ({contact, confirmDelete}) => {
                                     <i className="fa fa-eye"/>
                                 </Link>
                                 <Link
-                                    to={"/"}
+                                    to={`/contact/edit/${contact.id}`}
                                     className="btn my-1"
                                     style={{backgroundColor: CYAN}}
                                 >

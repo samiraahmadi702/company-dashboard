@@ -9,7 +9,7 @@ const SearchContact = () => {
                    onChange={(event) => {
                        onSearchInputChange(event.target.value);
                    }}
-                   className="form-control rounded-pill mb-5 w-50"
+                   className="form-control rounded-pill mb-3 w-50"
                    placeholder=" Search"/>
         </>
     )

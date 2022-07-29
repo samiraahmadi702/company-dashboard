@@ -151,11 +151,12 @@ const MainContent = () => {
                     </div>
                     <div className="col-10 position-relative overflow-scroll h-100"
                          style={{backgroundColor: CURRENTLINE}}>
-                        <div className="mx-2 mt-5 h-100 d-flex flex-grow-1 flex-wrap"
+                        <div className="mx-2 mt-2 h-100 d-flex flex-grow-1 flex-wrap"
                              style={{
                                  justifyContent: "flex-start",
                                  flexDirection: "row",
-                                 alignContent: "flex-start"
+                                 alignContent: "flex-start",
+                                 overflowY: "auto"
                              }}>
                             {location.pathname === "/contact" ?
                                 <div className="d-flex justify-content-center align-items-center"
