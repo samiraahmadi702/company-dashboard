@@ -13,5 +13,7 @@ export const ContactContext = createContext({
     onSearchInputChange: () => {
     },
     onCreateContact: () => {
+    },
+    onConfirmDelete: () => {
     }
 })

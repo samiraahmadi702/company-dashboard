@@ -1,14 +1,16 @@
 import Sidebar from "./layout/Sidebar";
 import {Outlet, useLocation, useNavigate} from 'react-router-dom'
-import {CURRENTLINE} from "../helpers/colors";
+import {COMMENT, CURRENTLINE, FOREGROUND, PURPLE, YELLOW} from "../helpers/colors";
 import {ContactContext} from "../contexts/contactContext"
 import {useEffect} from "react";
 import {useImmer} from "use-immer";
-import {createContact, getAllContacts, getAllGroups} from "../services/contactServices";
+import {createContact, deleteContact, getAllContacts, getAllGroups} from "../services/contactServices";
 import SearchContact from "./contacts/SearchContact";
 import _ from "lodash";
 import data from "bootstrap/js/src/dom/data";
 import {toast, ToastContainer} from "react-toastify";
+import {confirmAlert} from 'react-confirm-alert';
+import AllContacts from "./contacts/AllContacts";
 
 const MainContent = () => {
 
@@ -68,13 +70,79 @@ const MainContent = () => {
         }
     }
 
+    const onDeleteContact = async (contactId) => {
+        const contactBackup = [...allContacts];
+        try {
+
+            setFilteredContacts((draft) =>
+                draft.filter((c) => c.id !== contactId)
+            )
+
+            setAllContacts((draft) =>
+                draft.filter((c) => c.id !== contactId)
+            )
+
+            const {status} = await deleteContact(contactId);
+
+            if (status !== 200) {
+                setAllContacts(contactBackup);
+                setFilteredContacts(contactBackup);
+
+            }
+
+        } catch (err) {
+            console.log(err.message);
+            setFilteredContacts(contactBackup);
+            setAllContacts(contactBackup);
+        }
+
+    }
+    const onConfirmDelete = (contactId, contactFullName) => {
+        confirmAlert({
+            customUI: ({onClose}) => {
+                return (
+                    <div
+                        style={{
+                            backgroundColor: CURRENTLINE,
+                            border: `1px solid ${PURPLE}`,
+                            borderRadius: "1em",
+                        }}
+                        className="p-4"
+                    >
+                        <h1 style={{color: YELLOW}}>Delete Contact</h1>
+                        <p style={{color: FOREGROUND}}>
+                            Are you sure, you want to delete ${contactFullName}?
+                        </p>
+                        <button
+                            onClick={() => {
+                                onDeleteContact(contactId);
+                                onClose();
+                            }}
+                            className="btn mx-2"
+                            style={{backgroundColor: PURPLE}}
+                        >
+                            I am sure
+                        </button>
+                        <button
+                            onClick={onClose}
+                            className="btn"
+                            style={{backgroundColor: COMMENT}}
+                        >
+                            Cancel
+                        </button>
+                    </div>
+                )
+            }
+        });
+    }
+
     return (
         <ContactContext.Provider
             value={{
                 allContacts, setAllContacts,
                 allGroups, setAllGroups,
                 filteredContacts, setFilteredContacts, onSearchInputChange,
-                onCreateContact
+                onCreateContact, onConfirmDelete
             }}>
             <div className="h-100 w-100 mx-0 px-0">
                 <div className="row h-100 ">

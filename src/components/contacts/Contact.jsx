@@ -1,7 +1,10 @@
 import {Link} from "react-router-dom";
 import {CYAN, ORANGE, RED} from "../../helpers/colors";
+import {useContext} from "react";
+import {ContactContext} from "../../contexts/contactContext";
 
-const Contact = ({contact}) => {
+const Contact = ({contact, confirmDelete}) => {
+
     return (
         <>
             <div className="card col-5 mx-5 mb-5" style={{height: "fit-content"}}>
@@ -52,13 +55,13 @@ const Contact = ({contact}) => {
                                 >
                                     <i className="fa fa-pen"/>
                                 </Link>
-                                <Link
-                                    to={"/"}
+                                <button
+                                    onClick={confirmDelete}
                                     className="btn my-1"
                                     style={{backgroundColor: RED}}
                                 >
                                     <i className="fa fa-trash"/>
-                                </Link>
+                                </button>
                             </ul>
                         </div>
                     </div>
