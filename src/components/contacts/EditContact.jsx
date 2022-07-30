@@ -1,7 +1,7 @@
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import {contactSchema} from "./validation";
 import {Link, useNavigate, useParams} from "react-router-dom";
-import {useContext, useEffect, useState} from "react";
+import {useContext, useEffect} from "react";
 import {ContactContext} from "../../contexts/contactContext";
 import {useImmer} from "use-immer";
 import {getContactById, updateContact} from "../../services/contactServices";
@@ -177,7 +177,7 @@ const EditContact = () => {
                                 value="Edit Contact"
                             />
                             <Link
-                                to={"/contacts"}
+                                to={"/contact"}
                                 className="btn mx-2"
                                 style={{backgroundColor: COMMENT}}
                             >
